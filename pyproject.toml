@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ragforge"
+version = "0.1.0"
+description = "A lightweight, blazingly fast, and modular Python toolkit for RAG data pipelines, semantic chunking, hybrid search, and LLM evaluation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Frank Zhu", email = "1556587980@qq.com" }
+]
+keywords = [
+    "rag",
+    "llm",
+    "chunking",
+    "hybrid-search",
+    "evaluation",
+    "vector-search",
+    "bm25",
+    "nlp",
+    "data-pipeline"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0"
+]
+full = [
+    "numpy>=1.20.0",
+    "rich>=13.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/Frank-zhu2000/ragforge"
+Documentation = "https://github.com/Frank-zhu2000/ragforge#readme"
+Repository = "https://github.com/Frank-zhu2000/ragforge.git"
+Issues = "https://github.com/Frank-zhu2000/ragforge/issues"
+Changelog = "https://github.com/Frank-zhu2000/ragforge/blob/main/CHANGELOG.md"
+
+[project.scripts]
+ragforge = "ragforge.cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
